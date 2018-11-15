@@ -1,4 +1,4 @@
-##Introduction and file objective:
+## Introduction and file objective:
 
 - Start a vue project with a default structure thanks to an .sh file.
 - I've done this file because after used some CLI related with vue, I always need to adapt the code (adapt router, add sass, adapt folder structure / mutations and actions, ...).
