@@ -18,12 +18,9 @@ cd $1
 
 npm install
 
-basicComplements=axios vuex
-basicAndValidateComplements=axios vuelidate vuex
-allComplements=axios d3 lodash material-design-icons moment vuelidate vuetify vuex
-
 # Usually, I only want these basic complements, not the others.
-npm install $basicComplements
+npm install axios
+npm install --save vuex
 
 # Install sass loader (not in CLI by default):
 npm install -D node-sass sass-loader
@@ -55,22 +52,22 @@ import * as mutations from './mutations/'
 import { state } from './state'
 
 export default {
-	state,
-	mutations: {
-		...mutations
-	},
-	actions: {
-		...actions
-	},
-	getters: {
-	}
+  state,
+  mutations: {
+    ...mutations
+  },
+  actions: {
+    ...actions
+  },
+  getters: {
+  }
 }
 EOF
 
 # state.js:
 cat <<EOF >state.js
 export const state = {
-	// clubsData: clubsData
+  // clubsData: clubsData
 }
 EOF
 
@@ -81,28 +78,28 @@ cat <<EOF >index.html
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<!--Only if mobile adapt needing:-->
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<style type="text/css">
-			html { box-sizing: border-box; }
-			*
-			::before,
-			::after {
-				box-sizing: inherit
-			}
-			body {
-				margin: 0;
-				padding: 0;
-			}
-		</style>
-		<title>Super title!!!</title>
-	</head>
-	<body>
-		<div id="app"></div>
-		<!-- built files will be auto injected -->
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <!--Only if mobile adapt needing:-->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style type="text/css">
+            html { box-sizing: border-box; }
+            *
+            ::before,
+            ::after {
+                box-sizing: inherit
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <title>Super title!!!</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+    </body>
 </html>
 EOF
 
@@ -115,14 +112,14 @@ rm App.vue
 cat <<EOF >App.vue
 
 <template>
-	<div id="app" class="app">
-		<router-view/>
-	</div>
+    <div id="app" class="app">
+        <router-view/>
+    </div>
 </template>
 
 <script>
 export default {
-	name: 'App'
+  name: 'App'
 }
 </script>
 
@@ -135,7 +132,7 @@ cat <<EOF >app.scss
 @import "assets/vars-and-mixins";
 
 .app {
-	font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
 }
 EOF
 
@@ -158,11 +155,11 @@ const store = new Vuex.Store(vuexStore)
 
 // router = configRouter(VueRouter)
 new Vue({
-	el: '#app',
-	store,
-	router,
-	template: '<App/>',
-	components: {App}
+  el: '#app',
+  store,
+  router,
+  template: '<App/>',
+  components: {App}
 })
 EOF
 
@@ -180,13 +177,13 @@ import Home from '../components/Home/Home'
 
 Vue.use(Router)
 export default new Router({
-	routes: [
-		{
-			path: '/',
-			name: 'Home',
-			component: Home
-		}
-	]
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    }
+  ]
 })
 EOF
 
@@ -196,14 +193,14 @@ mkdir Home; cd Home
 
 cat <<EOF >Home.vue
 <template>
-	<div class="home">
-	</div>
+    <div class="home">
+    </div>
 </template>
 
 <script>
 
 export default {
-	name: 'Home'
+  name: 'Home'
 }
 </script>
 
@@ -230,7 +227,7 @@ EOF
 
 # ----------- Create basic / git: ---------- #
 
-	# .gitignore done by CLI, keep this default one.
+    # .gitignore done by CLI, keep this default one.
 cd ../..
 git init
 git add .
